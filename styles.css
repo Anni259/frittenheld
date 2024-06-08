@@ -1,3 +1,30 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    padding: 0 16px;
+}
+.headerMenu {
+    display: flex;
+    gap: 16px; 
+}
+.headerLogo {
+    width: 120px;
+    border-radius: 0%;
+}
+.headerImg {
+    border-radius: 0%;
+    width: 32px;
+}
 img {
     border-radius: 100%;
     width: 150px;
