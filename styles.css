@@ -1,4 +1,27 @@
 body {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #ff8c00;
+  --sb-size: 9px;
+}
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+body {
+    scroll-behavior: smooth;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -28,6 +51,9 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+h3 {
+    font-size: 20px;
+}
 .headerMenu {
     display: flex;
     gap: 16px; 
@@ -40,14 +66,88 @@ footer {
     cursor: pointer;
     width: 100px;
 }
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 16px;
+}
+.search a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: darkorange;
+    padding: 4px 8px;
+    border-radius: 16px;
+}
+.search a:hover {
+    background-color: darkorange;
+    color: white;
+}
 .mainSection {
    width: 100%;
    display: flex;
    flex-direction: column;
 }
 .menu {
-    /* background-color: aquamarine; */
     width: fit-content;
+}
+.menuSectionImg {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 24px;
+}
+.menuSection:nth-child(3) {
+    margin-bottom: 24px;
+}
+.menuDescription, 
+.menuSectionImg, 
+.currentDishDesign {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+.currentDishDesign {
+    border: 1px solid #dbd9d7;
+    border-radius: 8px;
+    padding: 0 16px;
+    width: 87%;
+}
+.currentDishDesign p {
+    font-weight: 300;
+    color: #666666;
+    margin-top: 0;
+}
+.currentDishDesignTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.currentDishDesignTop img {
+    cursor: pointer;
+    height: 40px;
+}
+.currentDishDesignTop img:hover {
+    -ms-transform: scale(1.3); 
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); 
+}
+.dishHeadline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dishHeadline img {
+    cursor: pointer;
+    height: 20px;
+}
+.dishContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .title {
     position: relative;
@@ -107,45 +207,40 @@ footer {
 .rankingImg {
     height: 24px;
 }
-.search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-bottom: 16px;
-}
-.search a {
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    color: darkorange;
-    padding: 4px 8px;
-    border-radius: 16px;
-}
-.search a:hover {
-    background-color: darkorange;
-    color: white;
-}
 .footerTop {
     display: flex;
     flex-direction: row;
     gap: 16px;
-    color: white;
+    padding-top: 16px;
 }
-.footerTop p {
+.footerTop a {
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 .footerBottom {
     color: white;
 }
-
 .shoppingBasketRail {
-    /* background-color: deeppink; */
-    width: 344px;
+    /* width: 344px; */
     position: sticky;
     top: 0px;
     height: 100vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.shoppingBasketHead,
+.shoppingBasketDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shoppingBasketHead img {
+    height: 32px;
+}
+.shoppingBasketHead p {
+    padding: 8px;
+    text-align: center;
+    font-weight: 300;
 }
 
 @media screen and (min-width: 1440px) {

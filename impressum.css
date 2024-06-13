@@ -1,0 +1,108 @@
+body {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #ff8c00;
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: url(./img/bg-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+footer {
+    background-color: darkorange;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+.headerMenu {
+    display: flex;
+    gap: 16px; 
+}
+.headerMenu img {
+    cursor: pointer;
+    width: 32px;
+}
+.headerLogo {
+    cursor: pointer;
+    width: 100px;
+}
+.content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+}
+.links a {
+    text-decoration: none;
+    color: black;
+}
+.button {
+    text-decoration: none;
+    color: darkorange;
+    padding: 4px 8px;
+    border-radius: 16px;
+}
+.button:hover {
+    background-color: darkorange;
+    color: white;
+}
+.footerTop {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 16px;
+}
+.footerTop a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.footerBottom {
+    color: white;
+}
