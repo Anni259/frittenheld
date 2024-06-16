@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="fonts.css">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body id="body" onload="init()">
    <header>
         <img class="headerLogo" src="./img/Lieferheld.jpeg" alt="Logo Lieferdienst">
         <h2>Speisekarte</h2>
@@ -50,20 +50,42 @@
                 <a href="#menuSectionStart 2">Fritten und noch mehr</a>
             </div>
         </div>
-        <div id="menuContent"></div>
+        <div id="menuContent">
+
+        </div>
     </section>
     <section class="shoppingBasketRail">
         <div class="shoppingBasket">
             <div class="shoppingBasketHead">
                 <h3>Warenkorb</h3>
                 <div class="deliveryOrNot">
-
+                    <div id="delivery" class="deliveryStatus  currentDeliveryStatus" onclick="deliveryStatus('delivery')">
+                        <img class="deliveryOrNotIcon" src="./img/lieferung.png" alt="Icon Lieferung">
+                        <div class="deliveryOrNotText">
+                            <span>Lieferung</span>
+                            <span>45-60 min</span>
+                        </div>
+                    </div>
+                    <div id="takeaway" class="deliveryStatus" onclick="deliveryStatus('takeaway')">
+                        <img class="deliveryOrNotIcon" src="./img/abholung.png" alt="Icon Abholung">
+                        <div class="deliveryOrNotText">
+                            <span>Abholung</span>
+                            <span>20 min</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="shoppingBasketDescription">
-                    <img src="./img/warenkorb.png" alt="Icon Warenkorb">
+                <div id="shoppingBasketInput" class="shoppingBasketDescription">
+                    <img class="shoppingBasketIcon" src="./img/warenkorb.png" alt="Icon Warenkorb">
                     <p>Stöbere durch das Fritten-Wunderland von Frittenheld <br> und finde deine goldenen Glücklichmacher!</p>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="checkout" class="checkoutSection d-none">
+        <div class="checkoutDialog">
+            <img src="./img/checkout.jpg" alt="Foto Kartoffel">
+            <h2>Danke für deine Bestellung bei Frittenheld!</h2>
+            <a onclick="closeCheckout()" href="index.html"><b>zurück</b></a>
         </div>
     </section>
    </main>

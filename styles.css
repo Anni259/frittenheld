@@ -222,7 +222,7 @@ h3 {
     color: white;
 }
 .shoppingBasketRail {
-    /* width: 344px; */
+    min-width: 302px;
     position: sticky;
     top: 0px;
     height: 100vh;
@@ -233,8 +233,9 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 32px;
 }
-.shoppingBasketHead img {
+.shoppingBasketIcon {
     height: 32px;
 }
 .shoppingBasketHead p {
@@ -242,7 +243,153 @@ h3 {
     text-align: center;
     font-weight: 300;
 }
-
+.deliveryStatus {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+}
+.currentDeliveryStatus {
+    border-radius: 24px;
+    background-color: white;
+}
+.deliveryOrNot {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 4px 0 24px 0;
+    background-color:rgb(245, 243, 241);
+    height: 48px;
+    border-radius: 24px;
+    width: 260px;
+}
+.deliveryOrNot:hover {
+    background-color: #ebe9e8;
+}
+.deliveryOrNotText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+.deliveryOrNotIcon {
+    height: 32px;
+    cursor: pointer;
+}
+.addedDishes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 260px;
+    margin-top: 16px;
+    border-bottom: 1px solid #ebe9e8;
+}
+.addedDish {
+    display: flex;
+    justify-content: space-between;
+}
+.addedDishAmount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.addedDishAmount img {
+    cursor: pointer;
+    height: 20px;
+    background-color: rgb(245, 243, 241);
+    padding: 6px;
+    border-radius: 50%;
+}
+.addedDishAmount img:hover {
+    background-color: #ebe9e8;
+}
+.addedDishCounter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.checkout {
+    margin-top: 32px;
+    width: 100%;
+}
+.totalCosts,
+.deliveryCosts,
+.totalWithDelivery {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+}
+.checkoutButton {
+    cursor: pointer;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: darkorange;
+    color: white;
+    border-radius: 24px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+}
+.checkoutButton:hover {
+     -ms-transform: scale(1.05); 
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05); 
+}
+.checkoutSection {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkoutDialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.checkoutDialog img {
+    width: 80%;
+    height: auto;
+}
+.checkoutDialog h2 {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+}
+.checkoutDialog a {
+    cursor: pointer;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    background-color: darkorange;
+    color: white;
+    text-decoration: none;
+    border-radius: 24px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+}
+.checkoutDialog a:hover {
+    -ms-transform: scale(1.05); 
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05); 
+}
+.d-none {
+    display: none;
+}
+.hide-scrollbar {
+    overflow: hidden;
+}
 @media screen and (min-width: 1440px) {
     body {
         padding-left: max(80px, calc(50% - 720px));
