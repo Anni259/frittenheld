@@ -20,8 +20,11 @@ body::-webkit-scrollbar-thumb {
                      var(--sb-track-color);
   }
 }
-body {
+html {
     scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -121,6 +124,9 @@ h3 {
     color: #666666;
     margin-top: 0;
 }
+.currentDishDesign h3:last-child {
+    color: darkorange;
+}
 .currentDishDesignTop {
     display: flex;
     justify-content: space-between;
@@ -154,7 +160,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -4px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .titleImg {
     width: 100%;
@@ -172,7 +178,7 @@ h3 {
     display: flex;
     flex-direction: column;
     padding: 0 48px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -4px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .restaurantTitle {
     display: flex;
@@ -221,19 +227,26 @@ h3 {
 .footerBottom {
     color: white;
 }
-.shoppingBasketRail {
+.shoppingBasketSection {
     min-width: 302px;
     position: sticky;
     top: 0px;
     height: 100vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 64px;
+}
+.shoppingBasketHead {
+    height: 100%;
+}
+.shoppingBasketDescription {
+    overflow: auto;
+    height: calc(100vh - 86px);
 }
 .shoppingBasketHead,
 .shoppingBasketDescription {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 32px;
 }
 .shoppingBasketIcon {
     height: 32px;
@@ -349,6 +362,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 .checkoutDialog {
     display: flex;
@@ -390,9 +404,80 @@ h3 {
 .hide-scrollbar {
     overflow: hidden;
 }
+.shoppingBasketButton {
+    position: fixed;
+    bottom: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.shoppingBasketButton button {
+    cursor: pointer;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+}
+.mobileShoppingBasket {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mobileBasket {
+    display: flex;
+    align-items: space-between;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 1440px) {
     body {
         padding-left: max(80px, calc(50% - 720px));
         padding-right: max(80px, calc(50% - 720px));
+    }
+}
+@media screen and (min-width: 801px) {
+    .shoppingBasketButton {
+        display: none;
+    }
+}
+@media screen and (max-width: 800px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    header h2,
+    .overlayLogo {
+        display: none;
+    }
+    .search {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    p, 
+    .search a {
+        font-size: 16px;
+    }
+    .restaurantDescription {
+        padding: 0 16px;
+    }
+    .footerTop {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

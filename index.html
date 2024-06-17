@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="fonts.css">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <script src="script.js"></script>
 </head>
 <body id="body" onload="init()">
    <header>
@@ -42,7 +43,7 @@
                 <a href="#"><b>4,2 </b>(250+)</a>
             </div>
             <div class="delivery">
-                <p>Mindestbestellwert: 10,00€ <b>•</b> Lieferung: 2,95€</p>
+                <p>Mindestbestellwert: 10,00€ <br><br>Lieferung: 2,95€</p>
             </div>
             <div class="search">
                 <a href="#menuSectionStart 0">Fritten</a>
@@ -54,9 +55,10 @@
 
         </div>
     </section>
-    <section class="shoppingBasketRail">
+    <section class="shoppingBasketSection hide-mobile">
         <div class="shoppingBasket">
             <div class="shoppingBasketHead">
+                <img onclick="closeBasket()" class="closeShoppingBasket d-none" src="./img/delete.png" alt="Icon close">
                 <h3>Warenkorb</h3>
                 <div class="deliveryOrNot">
                     <div id="delivery" class="deliveryStatus  currentDeliveryStatus" onclick="deliveryStatus('delivery')">
@@ -88,6 +90,11 @@
             <a onclick="closeCheckout()" href="index.html"><b>zurück</b></a>
         </div>
     </section>
+    <section id="shoppingBasketButton" class="shoppingBasketButton">
+    </section>
+    <section id="shoppingBasketMobile" class="d-none">
+    
+    </section>
    </main>
    <footer>
     <div class="footerTop">
@@ -99,6 +106,5 @@
         <p>coded by Anica Gillen, 2024</p>
     </div>
    </footer>
-   <script src="script.js"></script>
 </body>
 </html>
