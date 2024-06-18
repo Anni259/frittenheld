@@ -1,21 +1,26 @@
-body {
+body,
+.shoppingBasketDescription {
   --sb-track-color: #ffffff;
   --sb-thumb-color: #ff8c00;
   --sb-size: 9px;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.shoppingBasketDescription::-webkit-scrollbar {
   width: var(--sb-size)
 }
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.shoppingBasketDescription::-webkit-scrollbar-track {
   background: var(--sb-track-color);
   border-radius: 3px;
 }
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.shoppingBasketDescription::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 3px;
 }
 @supports not selector(::-webkit-scrollbar) {
-  body {
+  body,
+  .shoppingBasketDescription {
     scrollbar-color: var(--sb-thumb-color)
                      var(--sb-track-color);
   }
@@ -30,7 +35,7 @@ body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-image: url(./img/bg-img.jpg);
+    background-image: url(../img/bg-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -241,6 +246,7 @@ h3 {
 .shoppingBasketDescription {
     overflow: auto;
     height: calc(100vh - 86px);
+    padding-right: 8px;
 }
 .shoppingBasketHead,
 .shoppingBasketDescription {
