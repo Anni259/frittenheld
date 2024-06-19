@@ -232,6 +232,13 @@ h3 {
 .footerBottom {
     color: white;
 }
+.shoppingBasketSectionMobile {
+    position: absolute !important;
+    background-color: white;
+    width: 100%;
+    display: unset !important;
+    overflow: hidden;
+   }
 .shoppingBasketSection {
     min-width: 302px;
     position: sticky;
@@ -354,7 +361,7 @@ h3 {
     padding: 16px;
 }
 .checkoutButton:hover {
-     -ms-transform: scale(1.05); 
+    -ms-transform: scale(1.05); 
     -webkit-transform: scale(1.05);
     transform: scale(1.05); 
 }
@@ -407,6 +414,9 @@ h3 {
 .d-none {
     display: none;
 }
+.buttonMobile {
+    display: none;
+}
 .hide-scrollbar {
     overflow: hidden;
 }
@@ -432,23 +442,6 @@ h3 {
     margin-right: auto;
     padding: 16px;
 }
-.mobileShoppingBasket {
-    background-color: white;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.mobileBasket {
-    display: flex;
-    align-items: space-between;
-    flex-direction: column;
-}
 
 @media screen and (min-width: 1440px) {
     body {
@@ -456,16 +449,27 @@ h3 {
         padding-right: max(80px, calc(50% - 720px));
     }
 }
+/* min-width: viewport größer als...px */
 @media screen and (min-width: 801px) {
+    .shoppingBasketSection {
+        display: unset !important;
+    }
+      /* .shoppingBasketSectionMobile {
+        display: none;
+    } */
     .shoppingBasketButton {
         display: none;
     }
-}
+} 
+/* max-width: viewport kleiner als...px */
 @media screen and (max-width: 800px) {
-    .hide-mobile {
-        display: none;
-    }
-}
+   .shoppingBasketSection {
+    display:none;
+   }
+   .buttonMobile {
+    display: unset !important;
+   }
+} 
 @media screen and (max-width: 500px) {
     header h2,
     .overlayLogo {

@@ -4,17 +4,6 @@ function init(){
   checkDeliveryStatus();
 }
 
-function saveBasket(){
-  localStorage.setItem("shoppingBasket", JSON.stringify(shoppingBasket));
-}
-
-function loadBasket(){
-  let savedBasket = localStorage.getItem("shoppingBasket");
-  if (savedBasket){
-    shoppingBasket = JSON.parse(savedBasket);
-  }
-}
-
 function addToBasket(dish, price){
   let index = shoppingBasket[0].dish.indexOf(dish);
 
@@ -105,6 +94,32 @@ function deliveryStatus(status) {
   saveBasket();
 }
 
+function saveBasket() {
+  localStorage.setItem("shoppingBasket", JSON.stringify(shoppingBasket));
+}
+
+function loadBasket() {
+  let savedBasket = localStorage.getItem("shoppingBasket");
+  if (savedBasket) {
+    shoppingBasket = JSON.parse(savedBasket);
+  }
+}
+
+function closeBasket(){
+    document.getElementById("closeMobileBasket").classList.add("shoppingBasketSection");
+    document.getElementById("closeMobileBasket").classList.remove("shoppingBasketSectionMobile");
+
+    document.getElementById("body").classList.remove("hide-scrollbar");
+}
+
+function openMobileBasket() {
+  document.getElementById("closeMobileBasket").classList.add("shoppingBasketSectionMobile");
+  document.getElementById("closeMobileBasket").classList.remove("shoppingBasketSection");
+
+  document.getElementById("body").classList.add("hide-scrollbar");
+  renderBasket();
+}
+
 function openCheckout(){
   if (shoppingBasket[0].total >= 10.00) {
     document.getElementById("checkout").classList.remove("d-none");
@@ -119,12 +134,7 @@ function closeCheckout(){
   document.getElementById('body').classList.remove('hide-scrollbar');
 
   deleteAll();
+  // closeBasket();
+  // render();
 }
 
-function openMobileBasket(){
-  document.getElementById("shoppingBasketMobile").classList.remove("d-none");
-  document.getElementById("shoppingBasketMobile").classList.add("mobileShoppingBasket");
-  document.getElementById("body").classList.add("hide-scrollbar");
-
-  renderMobileBasket();
-}

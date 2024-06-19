@@ -31,7 +31,7 @@ body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    background-image: url(./img/bg-img.jpg);
+    background-image: url(../img/bg-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -50,8 +50,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
 }
 .headerMenu {
     display: flex;
@@ -66,7 +64,6 @@ footer {
     width: 100px;
 }
 .content {
-    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,9 +71,16 @@ footer {
     margin-right: auto;
     margin-left: auto;
 }
+.imprint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .links {
     display: flex;
     flex-direction: column;
+        align-items: center;
 }
 .links a {
     text-decoration: none;
@@ -84,13 +88,20 @@ footer {
 }
 .button {
     text-decoration: none;
-    color: darkorange;
-    padding: 4px 8px;
-    border-radius: 16px;
-}
-.button:hover {
     background-color: darkorange;
     color: white;
+    border-radius: 24px;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+}
+.button:hover {
+    -ms-transform: scale(1.05); 
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05); 
 }
 .footerTop {
     display: flex;

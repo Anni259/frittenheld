@@ -49,24 +49,6 @@ function generateBasket(dish, currentSubTotal, amount) {
   `;
 }
 
-function generateMobileBasket(dish, currentSubTotal, amount) {
-  let subTotal = currentSubTotal.toFixed(2).replace(".", ",");
-  return /*HTML*/ `<div class="addedDishes mobileBasket">
-    <div class="addedDish">
-      <span>${dish}</span>
-      <span>${subTotal} €</span>
-    </div>
-    <div class="addedDishAmount">
-      <img id="deleteDish" onclick="deleteDish('${dish}')" src="./img/delete.png" alt="Icon Löschen">
-      <div class="addedDishCounter">
-        <img onclick="deleteOneDish('${dish}')" src="./img/minus.png" alt="Icon Hinzufügen">
-        <span>${amount}</span>
-        <img onclick="addOneDish('${dish}')" src="./img/plus.png" alt="Icon Reduzieren">
-      </div>
-    </div>
-    </div>
-  `;
-}
 function generateCosts(total, deliveryCost, totalWithDelivery) {
   return /*HTML*/ `<div class="checkout">
     <div class="totalCosts">
@@ -95,6 +77,6 @@ function generateEmptyBasket() {
 }
 
 function generateMobileButton() {
-  return /*HTML*/ ` <button onclick="openMobileBasket()"> Warenkorb (${shoppingBasket[0].total.toFixed(2).replace(".", ",")} €)
+  return /*HTML*/ ` <button onclick="openMobileBasket()"> Warenkorb (${shoppingBasket[0].totalWithDelivery.toFixed(2).replace(".", ",")} €)
   `;
 }

@@ -57,14 +57,14 @@
         <div id="menuContent">
 
         </div>
-    </section>
-    <section class="shoppingBasketSection hide-mobile">
+    </section> 
+    <section id="closeMobileBasket" class="shoppingBasketSectionMobile shoppingBasketSection">
         <div class="shoppingBasket">
             <div class="shoppingBasketHead">
-                <img onclick="closeBasket()" class="closeShoppingBasket d-none" src="./img/delete.png" alt="Icon close">
+                <img onclick="closeBasket()" class="closeShoppingBasket buttonMobile" src="./img/delete.png" alt="Icon close">
                 <h3>Warenkorb</h3>
                 <div class="deliveryOrNot">
-                    <div id="delivery" class="deliveryStatus  currentDeliveryStatus" onclick="deliveryStatus('delivery')">
+                    <div id="delivery" class="deliveryStatus currentDeliveryStatus" onclick="deliveryStatus('delivery')">
                         <img class="deliveryOrNotIcon" src="./img/lieferung.png" alt="Icon Lieferung">
                         <div class="deliveryOrNotText">
                             <span>Lieferung</span>
@@ -94,8 +94,6 @@
         </div>
     </section>
     <section id="shoppingBasketButton" class="shoppingBasketButton">
-    </section>
-    <section id="shoppingBasketMobile" class="d-none">
     </section>
    </main>
    <footer>

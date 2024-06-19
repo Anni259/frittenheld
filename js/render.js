@@ -22,8 +22,7 @@ function renderDishes(currentMenu) {
     returnDishes += generateDish(
       currentDish,
       currentIngredient,
-      currentPrice,
-      j
+      currentPrice
     );
   }
   return returnDishes;
@@ -59,17 +58,4 @@ function renderCosts() {
     shoppingBasket[0].deliveryCost,
     shoppingBasket[0].totalWithDelivery
   );
-}
-
-function renderMobileBasket() {
-  let mobileBasket = document.getElementById("shoppingBasketMobile");
-  mobileBasket.innerHTML = "";
-
-  for (let i = 0; i < shoppingBasket[0].dish.length; i++) {
-    mobileBasket.innerHTML += generateMobileBasket(
-      shoppingBasket[0].dish[i],
-      shoppingBasket[0].subTotal[i],
-      shoppingBasket[0].amount[i]
-    );
-  }
 }
