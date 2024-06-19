@@ -31,11 +31,19 @@ function renderDishes(currentMenu) {
 function renderBasket() {
   let input = document.getElementById("shoppingBasketInput");
   input.innerHTML = "";
-
+  let inputMobile = document.getElementById("shoppingBasketInputMobile");
+  inputMobile.innerHTML = "";
   let mobile = document.getElementById("shoppingBasketButton");
   mobile.innerHTML = "";
 
   calculatePrice();
+
+  composeBasket(input);
+  mobile.innerHTML += generateMobileButton();
+  inputMobile.innerHTML = input.innerHTML;
+}
+
+function composeBasket(input) {
   if (shoppingBasket[0].dish.length == 0) {
     input.innerHTML += generateEmptyBasket();
   } else {
@@ -48,7 +56,6 @@ function renderBasket() {
     }
     renderCosts();
   }
-  mobile.innerHTML += generateMobileButton();
 }
 
 function renderCosts() {

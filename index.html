@@ -22,7 +22,7 @@
         </div>
    </header>
    <main>
-    <section class="mainSection">
+    <section id="mainSectionHide" class="mainSection">
         <div class="title">
             <img class="titleImg" src="./img/titelbild.jpg" alt="Foto Pommes Frites">
             <img class="overlayLogo" src="./img/Logo-frittenheld.png" alt="Logo Frittenheld">
@@ -46,7 +46,7 @@
                 <a href="#"><b>4,2 </b>(250+)</a>
             </div>
             <div class="delivery">
-                <p>Mindestbestellwert: 10,00€ <br><br>Lieferung: 2,95€</p>
+                <p>Mindestbestellwert: 10,00€ <br><br>Lieferung: 2,90€</p>
             </div>
             <div class="search">
                 <a href="#menuSectionStart 0">Fritten</a>
@@ -58,10 +58,9 @@
 
         </div>
     </section> 
-    <section id="closeMobileBasket" class="shoppingBasketSectionMobile shoppingBasketSection">
-        <div class="shoppingBasket">
+    <section id="closeBasket" class="shoppingBasketSection">
+         <div class="shoppingBasket">
             <div class="shoppingBasketHead">
-                <img onclick="closeBasket()" class="closeShoppingBasket buttonMobile" src="./img/delete.png" alt="Icon close">
                 <h3>Warenkorb</h3>
                 <div class="deliveryOrNot">
                     <div id="delivery" class="deliveryStatus currentDeliveryStatus" onclick="deliveryStatus('delivery')">
@@ -80,6 +79,36 @@
                     </div>
                 </div>
                 <div id="shoppingBasketInput" class="shoppingBasketDescription">
+                    <img class="shoppingBasketIcon" src="./img/warenkorb.png" alt="Icon Warenkorb">
+                    <p>Stöbere durch das Fritten-Wunderland von Frittenheld <br> und finde deine goldenen Glücklichmacher!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="closeMobileBasket" class="shoppingBasketSectionMobile d-none">
+        <div class="shoppingBasket">
+            <div class="shoppingBasketHead">
+                <div class="shoppingBasketClose">
+                    <img onclick="closeBasket()" class="closeShoppingBasket buttonMobile" src="./img/delete.png" alt="Icon close">
+                </div>
+                <h3>Warenkorb</h3>
+                <div class="deliveryOrNot">
+                    <div id="deliveryMobile" class="deliveryStatus currentDeliveryStatus" onclick="deliveryStatus('delivery')">
+                        <img class="deliveryOrNotIcon" src="./img/lieferung.png" alt="Icon Lieferung">
+                        <div class="deliveryOrNotText">
+                            <span>Lieferung</span>
+                            <span>45-60 min</span>
+                        </div>
+                    </div>
+                    <div id="takeawayMobile" class="deliveryStatus" onclick="deliveryStatus('takeaway')">
+                        <img class="deliveryOrNotIcon" src="./img/abholung.png" alt="Icon Abholung">
+                        <div class="deliveryOrNotText">
+                            <span>Abholung</span>
+                            <span>20 min</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="shoppingBasketInputMobile" class="shoppingBasketDescription">
                     <img class="shoppingBasketIcon" src="./img/warenkorb.png" alt="Icon Warenkorb">
                     <p>Stöbere durch das Fritten-Wunderland von Frittenheld <br> und finde deine goldenen Glücklichmacher!</p>
                 </div>

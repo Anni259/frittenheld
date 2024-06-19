@@ -236,7 +236,6 @@ h3 {
     position: absolute !important;
     background-color: white;
     width: 100%;
-    display: unset !important;
     overflow: hidden;
    }
 .shoppingBasketSection {
@@ -268,6 +267,12 @@ h3 {
     padding: 8px;
     text-align: center;
     font-weight: 300;
+}
+.shoppingBasketClose {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    padding-right: 32px;
 }
 .deliveryStatus {
     cursor: pointer;
@@ -416,6 +421,7 @@ h3 {
 }
 .buttonMobile {
     display: none;
+    height: 24px;
 }
 .hide-scrollbar {
     overflow: hidden;
@@ -430,8 +436,6 @@ h3 {
 .shoppingBasketButton button {
     cursor: pointer;
     width: 240px;
-    display: flex;
-    justify-content: center;
     background-color: darkorange;
     color: white;
     font-weight: bold;
@@ -454,9 +458,6 @@ h3 {
     .shoppingBasketSection {
         display: unset !important;
     }
-      /* .shoppingBasketSectionMobile {
-        display: none;
-    } */
     .shoppingBasketButton {
         display: none;
     }

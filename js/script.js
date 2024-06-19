@@ -59,7 +59,11 @@ function calculatePrice(){
     shoppingBasket[0].subTotal[i] = shoppingBasket[0].price[i] * shoppingBasket[0].amount[i];
     shoppingBasket[0].total = shoppingBasket[0].total + shoppingBasket[0].subTotal[i];
   }
-  shoppingBasket[0].totalWithDelivery = shoppingBasket[0].total + shoppingBasket[0].deliveryCost;
+  if (shoppingBasket[0].dish.length == 0) {
+    shoppingBasket[0].totalWithDelivery = 0;
+  } else {
+      shoppingBasket[0].totalWithDelivery = shoppingBasket[0].total + shoppingBasket[0].deliveryCost;
+  }
 }
 
 function deleteAll() {
@@ -82,8 +86,11 @@ function checkDeliveryStatus() {
 
 function deliveryStatus(status) {
   document.getElementById("delivery").classList.remove("currentDeliveryStatus");
+  document.getElementById("deliveryMobile").classList.remove("currentDeliveryStatus");
   document.getElementById("takeaway").classList.remove("currentDeliveryStatus");
+  document.getElementById("takeawayMobile").classList.remove("currentDeliveryStatus");
   document.getElementById(status).classList.add("currentDeliveryStatus");
+  document.getElementById(status+'Mobile').classList.add("currentDeliveryStatus");
 
   if (status == 'takeaway') {
     shoppingBasket[0].deliveryCost = 0;
@@ -106,17 +113,16 @@ function loadBasket() {
 }
 
 function closeBasket(){
-    document.getElementById("closeMobileBasket").classList.add("shoppingBasketSection");
-    document.getElementById("closeMobileBasket").classList.remove("shoppingBasketSectionMobile");
-
-    document.getElementById("body").classList.remove("hide-scrollbar");
+    document.getElementById("closeMobileBasket").classList.add("d-none");
+    document.getElementById("mainSectionHide").classList.remove("d-none");
+    // document.getElementById("shoppingBasketButton").classList.remove("d-none");
 }
 
 function openMobileBasket() {
-  document.getElementById("closeMobileBasket").classList.add("shoppingBasketSectionMobile");
-  document.getElementById("closeMobileBasket").classList.remove("shoppingBasketSection");
+  document.getElementById("closeMobileBasket").classList.remove("d-none");
+  document.getElementById("mainSectionHide").classList.add("d-none");
+  // document.getElementById("shoppingBasketButton").classList.add("d-none");
 
-  document.getElementById("body").classList.add("hide-scrollbar");
   renderBasket();
 }
 
@@ -134,7 +140,5 @@ function closeCheckout(){
   document.getElementById('body').classList.remove('hide-scrollbar');
 
   deleteAll();
-  // closeBasket();
-  // render();
 }
 
