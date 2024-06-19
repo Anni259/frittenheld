@@ -115,13 +115,13 @@ function loadBasket() {
 function closeBasket(){
     document.getElementById("closeMobileBasket").classList.add("d-none");
     document.getElementById("mainSectionHide").classList.remove("d-none");
-    // document.getElementById("shoppingBasketButton").classList.remove("d-none");
+    document.getElementById("shoppingBasketButton").classList.remove("d-none");
 }
 
 function openMobileBasket() {
   document.getElementById("closeMobileBasket").classList.remove("d-none");
   document.getElementById("mainSectionHide").classList.add("d-none");
-  // document.getElementById("shoppingBasketButton").classList.add("d-none");
+  document.getElementById("shoppingBasketButton").classList.add("d-none");
 
   renderBasket();
 }

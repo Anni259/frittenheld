@@ -417,7 +417,7 @@ h3 {
     transform: scale(1.05); 
 }
 .d-none {
-    display: none;
+    display: none !important;
 }
 .buttonMobile {
     display: none;
@@ -445,50 +445,4 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     padding: 16px;
-}
-
-@media screen and (min-width: 1440px) {
-    body {
-        padding-left: max(80px, calc(50% - 720px));
-        padding-right: max(80px, calc(50% - 720px));
-    }
-}
-/* min-width: viewport größer als...px */
-@media screen and (min-width: 801px) {
-    .shoppingBasketSection {
-        display: unset !important;
-    }
-    .shoppingBasketButton {
-        display: none;
-    }
-} 
-/* max-width: viewport kleiner als...px */
-@media screen and (max-width: 800px) {
-   .shoppingBasketSection {
-    display:none;
-   }
-   .buttonMobile {
-    display: unset !important;
-   }
-} 
-@media screen and (max-width: 500px) {
-    header h2,
-    .overlayLogo {
-        display: none;
-    }
-    .search {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    p, 
-    .search a {
-        font-size: 16px;
-    }
-    .restaurantDescription {
-        padding: 0 16px;
-    }
-    .footerTop {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }

@@ -14,6 +14,7 @@ function generateMenu(currentMenu, i) {
 
 function generateDish(currentDish, currentIngredient, currentPrice) {
   let price = currentPrice.toFixed(2).replace(".", ",");
+
   return /*HTML*/ `
     <div class="currentDishDesign">
       <div class=currentDishDesignTop>
@@ -31,6 +32,7 @@ function generateDish(currentDish, currentIngredient, currentPrice) {
 
 function generateBasket(dish, currentSubTotal, amount) {
   let subTotal = currentSubTotal.toFixed(2).replace(".", ",");
+  
   return /*HTML*/ `<div class="addedDishes">
     <img class="d-none" src="./img/delete.png" alt="Icon Close">
     <div class="addedDish">
