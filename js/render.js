@@ -38,12 +38,12 @@ function renderBasket() {
 
   calculatePrice();
 
-  composeBasket(input);
+  createBasket(input);
   mobile.innerHTML += generateMobileButton();
   inputMobile.innerHTML = input.innerHTML;
 }
 
-function composeBasket(input) {
+function createBasket(input) {
   if (shoppingBasket[0].dish.length == 0) {
     input.innerHTML += generateEmptyBasket();
   } else {
@@ -59,10 +59,15 @@ function composeBasket(input) {
 }
 
 function renderCosts() {
-  let input = document.getElementById("shoppingBasketInput");
+  let input = document.getElementById("result");
+  input.innerHTML = "";
+  let inputMobile = document.getElementById("resultMobile");
+  inputMobile.innerHTML = "";
+
   input.innerHTML += generateCosts(
     shoppingBasket[0].total,
     shoppingBasket[0].deliveryCost,
     shoppingBasket[0].totalWithDelivery
   );
+   inputMobile.innerHTML = input.innerHTML;
 }

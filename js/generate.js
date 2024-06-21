@@ -65,9 +65,9 @@ function generateCosts(total, deliveryCost, totalWithDelivery) {
       <span><b>Gesamt</b></span>
       <span><b>${totalWithDelivery.toFixed(2).replace(".", ",")} €</b></span>
     </div>
-  </div>
-  <div class="checkoutButton">
-    <span onclick="openCheckout()"><b>Bezahlen: ${totalWithDelivery.toFixed(2).replace(".", ",")} €</b><span>
+    <div class="checkoutButton">
+      <span onclick="openCheckout()"><b>Bezahlen: ${totalWithDelivery.toFixed(2).replace(".", ",")} €</b><span>
+    </div>
   </div>
   `;
 }
